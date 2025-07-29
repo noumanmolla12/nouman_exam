@@ -3,7 +3,8 @@ const router = express.Router();
 const multer = require('multer');
 const Admin = require('../models/admin.model');
 const path = require('path');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+
 
 // Multer configuration for image uploads
 const storage = multer.diskStorage({

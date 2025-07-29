@@ -3,7 +3,8 @@ const router = express.Router();
 const multer = require('multer');
 const Student = require('../models/student.model');
 const path = require('path');
-const bcrypt = require('bcrypt'); // added for hashpassword
+const bcrypt = require('bcryptjs');
+
 
 
 
