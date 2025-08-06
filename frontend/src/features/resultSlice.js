@@ -5,7 +5,7 @@ import axios from 'axios';
 export const fetchUserResult = createAsyncThunk(
   'result/fetchUserResult',
   async (userId) => {
-    const response = await axios.get(`http://localhost:8080/result/result/${userId}`);
+    const response = await axios.get(`https://nouman-exam.onrender.com/result/result/${userId}`);
     return response.data;
   }
 );

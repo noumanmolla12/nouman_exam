@@ -2,29 +2,29 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchAllCategories = createAsyncThunk('categories/fetchAllCategories', async () => {
-  const response = await axios.get('http://localhost:8080/category/all');
+  const response = await axios.get('https://nouman-exam.onrender.com/category/all');
   return response.data;
 });
 
 
 export const fetchSingleCategory = createAsyncThunk('categories/fetchSingleCategory', async (categoryId) => {
-  const response = await axios.get(`http://localhost:8080/category/${categoryId}`);
+  const response = await axios.get(`https://nouman-exam.onrender.com/category/${categoryId}`);
  console.log('response',response)
   return response.data;
 });
 
 export const deleteCategory = createAsyncThunk('categories/deleteCategory', async (categoryId) => {
-  await axios.delete(`http://localhost:8080/category/delete/${categoryId}`);
+  await axios.delete(`https://nouman-exam.onrender.com/category/delete/${categoryId}`);
   return categoryId;
 });
 
 export const createCategory = createAsyncThunk('categories/createCategory', async (categoryData) => {
-  const response = await axios.post('http://localhost:8080/category/add-category', categoryData);
+  const response = await axios.post('https://nouman-exam.onrender.com/category/add-category', categoryData);
   return response.data;
 });
 
 export const updateCategory = createAsyncThunk('categories/updateCategory', async ({ categoryId, formData }) => {
-  const response = await axios.put(`http://localhost:8080/category/update/${categoryId}`, formData);
+  const response = await axios.put(`https://nouman-exam.onrender.com/category/update/${categoryId}`, formData);
   return response.data;
 });
 

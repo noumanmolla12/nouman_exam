@@ -6,7 +6,7 @@ export const submitAnswer = createAsyncThunk(
   'exam/submitAnswer',
   async (submissionData, thunkAPI) => {
     try {
-      const response = await axios.post('http://localhost:8080/exam/submit', submissionData, {
+      const response = await axios.post('https://nouman-exam.onrender.com/exam/submit', submissionData, {
         headers: {
           'Content-Type': 'application/json'
         }

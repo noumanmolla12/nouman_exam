@@ -5,7 +5,7 @@ export const pathSlice = createSlice({
   name: 'path',
   initialState: {
     globalPath: '/', // Initial global path 
-    imagePath: 'http://localhost:8080/uploads/', // Initial image path
+    imagePath: 'https://nouman-exam.onrender.com/uploads/', // Initial image path
   },
   reducers: {
     setGlobalPath: (state, action) => {

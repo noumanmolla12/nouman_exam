@@ -8,13 +8,13 @@ import axios from 'axios';
 // Async thunk to fetch all admins
 
 export const fetchAllAdmins = createAsyncThunk('admins/fetchAllAdmins', async () => {
-  const response = await axios.get('http://localhost:8080/admin/all');
+  const response = await axios.get('https://nouman-exam.onrender.com/admin/all');
   return response.data;
 });
 
 // Async thunk to fetch a admin by ID
 export const fetchSingleAdmin = createAsyncThunk('admins/fetchSingleAdmin', async (adminId) => {
-  const response = await axios.get(`http://localhost:8080/admin/${adminId}`);
+  const response = await axios.get(`https://nouman-exam.onrender.com/admin/${adminId}`);
  console.log('response',response)
   return response.data;
 });
@@ -22,7 +22,7 @@ export const fetchSingleAdmin = createAsyncThunk('admins/fetchSingleAdmin', asyn
 
 // Async thunk to handle adding a admin
 export const addAdmin = createAsyncThunk('admins/addAdmin', async (adminData) => {
-  const response = await axios.post('http://localhost:8080/admin/add-admin', adminData);
+  const response = await axios.post('https://nouman-exam.onrender.com/admin/add-admin', adminData);
   return response.data;
 });
 
@@ -30,7 +30,7 @@ export const addAdmin = createAsyncThunk('admins/addAdmin', async (adminData) =>
 
 // Async thunk to handle updating a admin
 export const updateAdmin = createAsyncThunk('admins/updateAdmin', async ({ adminId, formData }) => {
-  const response = await axios.put(`http://localhost:8080/admin/update/${adminId}`, formData);
+  const response = await axios.put(`https://nouman-exam.onrender.com/admin/update/${adminId}`, formData);
   return response.data;
 });
 
@@ -40,7 +40,7 @@ export const updateAdmin = createAsyncThunk('admins/updateAdmin', async ({ admin
 
 // Async thunk to handle deleting a admin
 export const deleteAdmin = createAsyncThunk('admins/deleteAdmin', async (adminId) => {
-  await axios.delete(`http://localhost:8080/admin/delete/${adminId}`);
+  await axios.delete(`https://nouman-exam.onrender.com/admin/delete/${adminId}`);
   return adminId;
 });
 

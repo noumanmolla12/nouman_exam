@@ -8,13 +8,13 @@ import axios from 'axios';
 // Async thunk to fetch all answers
 
 export const fetchAllAnswers = createAsyncThunk('answers/fetchAllAnswers', async () => {
-  const response = await axios.get('http://localhost:8080/answers/all');
+  const response = await axios.get('https://nouman-exam.onrender.com/answers/all');
   return response.data;
 });
 
 // Async thunk to fetch a answer by ID
 export const fetchSingleAnswer = createAsyncThunk('answers/fetchSingleAnswer', async (answerId) => {
-  const response = await axios.get(`http://localhost:8080/answers/${answerId}`);
+  const response = await axios.get(`https://nouman-exam.onrender.com/answers/${answerId}`);
  console.log('response',response)
   return response.data;
 });
@@ -22,7 +22,7 @@ export const fetchSingleAnswer = createAsyncThunk('answers/fetchSingleAnswer', a
 
 // Async thunk to handle adding a answer
 export const addAnswer = createAsyncThunk('answers/addAnswer', async (answerData) => {
-  const response = await axios.post('http://localhost:8080/answers/add-answer', answerData);
+  const response = await axios.post('https://nouman-exam.onrender.com/answers/add-answer', answerData);
   return response.data;
 });
 
@@ -30,7 +30,7 @@ export const addAnswer = createAsyncThunk('answers/addAnswer', async (answerData
 
 // Async thunk to handle updating a answer
 export const updateAnswer = createAsyncThunk('answers/updateAnswer', async ({ answerId, formData }) => {
-  const response = await axios.put(`http://localhost:8080/answers/update/${answerId}`, formData);
+  const response = await axios.put(`https://nouman-exam.onrender.com/answers/update/${answerId}`, formData);
   return response.data;
 });
 
@@ -40,7 +40,7 @@ export const updateAnswer = createAsyncThunk('answers/updateAnswer', async ({ an
 
 // Async thunk to handle deleting a answer
 export const deleteAnswer = createAsyncThunk('answers/deleteAnswer', async (answerId) => {
-  await axios.delete(`http://localhost:8080/answers/delete/${answerId}`); // Removed extra slash
+  await axios.delete(`https://nouman-exam.onrender.com/answers/delete/${answerId}`); // Removed extra slash
   return answerId;
 });
 

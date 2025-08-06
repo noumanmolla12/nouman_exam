@@ -8,13 +8,13 @@ import axios from 'axios';
 // Async thunk to fetch all students
 
 export const fetchAllStudents = createAsyncThunk('students/fetchAllStudents', async () => {
-  const response = await axios.get('http://localhost:8080/student/all');
+  const response = await axios.get('https://nouman-exam.onrender.com/student/all');
   return response.data;
 });
 
 // Async thunk to fetch a student by ID
 export const fetchSingleStudent = createAsyncThunk('students/fetchSingleStudent', async (studentId) => {
-  const response = await axios.get(`http://localhost:8080/student/${studentId}`);
+  const response = await axios.get(`https://nouman-exam.onrender.com/student/${studentId}`);
  console.log('response',response)
   return response.data;
 });
@@ -22,7 +22,7 @@ export const fetchSingleStudent = createAsyncThunk('students/fetchSingleStudent'
 
 // Async thunk to handle adding a student
 export const addStudent = createAsyncThunk('students/addStudent', async (studentData) => {
-  const response = await axios.post('http://localhost:8080/student/add-student', studentData);
+  const response = await axios.post('https://nouman-exam.onrender.com/student/add-student', studentData);
   return response.data;
 });
 
@@ -30,7 +30,7 @@ export const addStudent = createAsyncThunk('students/addStudent', async (student
 
 // Async thunk to handle updating a student
 export const updateStudent = createAsyncThunk('students/updateStudent', async ({ studentId, formData }) => {
-  const response = await axios.put(`http://localhost:8080/student/update/${studentId}`, formData);
+  const response = await axios.put(`https://nouman-exam.onrender.com/student/update/${studentId}`, formData);
   return response.data;
 });
 
@@ -40,7 +40,7 @@ export const updateStudent = createAsyncThunk('students/updateStudent', async ({
 
 // Async thunk to handle deleting a student
 export const deleteStudent = createAsyncThunk('students/deleteStudent', async (studentId) => {
-  await axios.delete(`http://localhost:8080/student/delete/${studentId}`);
+  await axios.delete(`https://nouman-exam.onrender.com/student/delete/${studentId}`);
   return studentId;
 });
 

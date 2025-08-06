@@ -8,13 +8,13 @@ import axios from 'axios';
 // Async thunk to fetch all topics
 
 export const fetchAllTopics = createAsyncThunk('topics/fetchAllTopics', async () => {
-  const response = await axios.get('http://localhost:8080/topic/all');
+  const response = await axios.get('https://nouman-exam.onrender.com/topic/all');
   return response.data;
 });
 
 // Async thunk to fetch a topic by ID
 export const fetchSingleTopic = createAsyncThunk('topics/fetchSingleTopic', async (topicId) => {
-  const response = await axios.get(`http://localhost:8080/topic/${topicId}`);
+  const response = await axios.get(`https://nouman-exam.onrender.com/topic/${topicId}`);
  console.log('response',response)
   return response.data;
 });
@@ -22,7 +22,7 @@ export const fetchSingleTopic = createAsyncThunk('topics/fetchSingleTopic', asyn
 
 // Async thunk to handle adding a topic
 export const addTopic = createAsyncThunk('topics/addTopic', async (topicData) => {
-  const response = await axios.post('http://localhost:8080/topic/add-topic', topicData);
+  const response = await axios.post('https://nouman-exam.onrender.com/topic/add-topic', topicData);
   return response.data;
 });
 
@@ -30,7 +30,7 @@ export const addTopic = createAsyncThunk('topics/addTopic', async (topicData) =>
 
 // Async thunk to handle updating a topic
 export const updateTopic = createAsyncThunk('topics/updateTopic', async ({ topicId, formData }) => {
-  const response = await axios.put(`http://localhost:8080/topic/update/${topicId}`, formData);
+  const response = await axios.put(`https://nouman-exam.onrender.com/topic/update/${topicId}`, formData);
   return response.data;
 });
 
@@ -40,7 +40,7 @@ export const updateTopic = createAsyncThunk('topics/updateTopic', async ({ topic
 
 // Async thunk to handle deleting a topic
 export const deleteTopic = createAsyncThunk('topics/deleteTopic', async (topicId) => {
-  await axios.delete(`http://localhost:8080/topic/delete/${topicId}`); // Removed extra slash
+  await axios.delete(`https://nouman-exam.onrender.com/topic/delete/${topicId}`); // Removed extra slash
   return topicId;
 });
 

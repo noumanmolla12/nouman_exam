@@ -8,13 +8,13 @@ import axios from 'axios';
 // Async thunk to fetch all questions
 
 export const fetchAllQuestions = createAsyncThunk('questions/fetchAllQuestions', async () => {
-  const response = await axios.get('http://localhost:8080/questions/all');
+  const response = await axios.get('https://nouman-exam.onrender.com/questions/all');
   return response.data;
 });
 
 // Async thunk to fetch a question by ID
 export const fetchSingleQuestion = createAsyncThunk('questions/fetchSingleQuestion', async (questionId) => {
-  const response = await axios.get(`http://localhost:8080/questions/${questionId}`);
+  const response = await axios.get(`https://nouman-exam.onrender.com/questions/${questionId}`);
  console.log('response',response)
   return response.data;
 });
@@ -22,7 +22,7 @@ export const fetchSingleQuestion = createAsyncThunk('questions/fetchSingleQuesti
 
 // Async thunk to handle adding a question
 export const addQuestion = createAsyncThunk('questions/addQuestion', async (questionData) => {
-  const response = await axios.post('http://localhost:8080/questions/add-question', questionData);
+  const response = await axios.post('https://nouman-exam.onrender.com/questions/add-question', questionData);
   return response.data;
 });
 
@@ -30,7 +30,7 @@ export const addQuestion = createAsyncThunk('questions/addQuestion', async (ques
 
 // Async thunk to handle updating a question
 export const updateQuestion = createAsyncThunk('questions/updateQuestion', async ({ questionId, formData }) => {
-  const response = await axios.put(`http://localhost:8080/questions/update/${questionId}`, formData);
+  const response = await axios.put(`https://nouman-exam.onrender.com/questions/update/${questionId}`, formData);
   return response.data;
 });
 
@@ -40,7 +40,7 @@ export const updateQuestion = createAsyncThunk('questions/updateQuestion', async
 
 // Async thunk to handle deleting a question
 export const deleteQuestion = createAsyncThunk('questions/deleteQuestion', async (questionId) => {
-  await axios.delete(`http://localhost:8080/questions/delete/${questionId}`); // Removed extra slash
+  await axios.delete(`https://nouman-exam.onrender.com/questions/delete/${questionId}`); // Removed extra slash
   return questionId;
 });
 
